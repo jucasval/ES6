@@ -1,19 +1,26 @@
 "use strict";
 
-//Declaración de constantes con const
+//Declarar arrays constantes con const
 
 /*
-    Las variables constantes en Javascript tienen ámbito de bloque al igual que las variables
-    definidas con 'let'.
-    Como sabemos, el valor de una constante no puede variar.
-    Para diferenciarlo de las variables combiene nombrarlas en mayusculas
+   Al igual que otros tipos de datos, podemos declarar arrays constantes con const
+   No podemos redefinirlos utilizando el igual como lo haríamos con una variable, pero SÍ podemos
+   redefinir sus valores uno a uno
 */
-function saludar() {
+function cambiarArray() {
   "use strict";
 
-  var SALUDO = "Hola, amigo"; //SALUDO = "ADIOS";
+  var MIARRAY = [1, 2, 3];
+  console.log(MIARRAY);
+  /*
+  MIARRAY = [4, 5, 6];
+  console.log(MIARRAY);//COMO VEMOS, ESTO DA ERROR. 
+  */
 
-  console.log(SALUDO);
+  MIARRAY[0] = 4;
+  MIARRAY[1] = 5;
+  MIARRAY[2] = 6;
+  console.log(MIARRAY); //ASÍ SÍ FUNCIONA
 }
 
-saludar();
+cambiarArray();
