@@ -1,25 +1,44 @@
-//Declarar arrays constantes con const
-
+//Arrow functions o funciones flechas
 /*
-   Al igual que otros tipos de datos, podemos declarar arrays constantes con const
-   No podemos redefinirlos utilizando el igual como lo haríamos con una variable, pero SÍ podemos
-   redefinir sus valores uno a uno
+   Las funciones flechas son una alternativa compacta a una función convencional.
+   No son adecuadas para ser utilizadas como métodos y no pueden ser usadas como constructores.
+
+   SINTAXIS: (param1, param2, ..., paramN) => {sentencias}
+             (param1, param2, ..., paramN) => {return loquesea}
+             (param1, param2, ..., paramN) => expresión
+             () => {return expresión}
+
+             Parentesis opcionales con un sólo parámetro.
+             (parametro) => {sentencias} 
+               parametro => {sentencias}
+            
+             Paréntesis son obligatorios siempre que la función no tenga parámetros.
+             () => {sentencias}
 */
 
-function cambiarArray() {
-    "use strict";
-    const MIARRAY = [1, 2, 3];
-    console.log(MIARRAY);
-
-    /*
-    MIARRAY = [4, 5, 6];
-    console.log(MIARRAY);//COMO VEMOS, ESTO DA ERROR. 
-    */
-    MIARRAY[0] = 4;
-    MIARRAY[1] = 5;
-    MIARRAY[2] = 6;
-    console.log(MIARRAY); //ASÍ SÍ FUNCIONA
-
+var miFuncion = function () {
+    return new Date();
 }
+console.log(miFuncion());
 
-cambiarArray();
+//() => {return expresión}
+var miFuncion2 = () => { return new Date };
+console.log(miFuncion2());
+
+//() => expresión
+var miFuncion3 = () => new Date;
+console.log(miFuncion3());
+
+
+var arraysConcatenados = function (array1, array2) {
+    return array1.concat(array2);
+}
+console.log(arraysConcatenados([1, 2], [3, 4, 5]));
+
+//(param1, param2, ..., paramN) => {return loquesea}
+var miNuevoArray = (array1, array2) => { return array1.concat(array2) };
+console.log(miNuevoArray([1, 2], [3, 4, 5]));
+
+//(param1, param2, ..., paramN) => expresión
+var miNuevoArray2 = (array1, array2) => array1.concat(array2);
+console.log(miNuevoArray2([1, 2], [3, 4, 5]));
