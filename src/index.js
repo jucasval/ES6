@@ -1,28 +1,32 @@
-//USE STRICT O MODO ESTRICTO
+//ÁMBITO DE VARIABLES
 
-/**
-    "use strict" es una línea que indica que el código debe ser usado "en modo estricto", es decir,
-    no se pueden utilizar variables no declaradas.
-    Fuera de una función tienen ámbito global; dentro de ella, local (el de la función).
+/*El ámbito de una variable (scope) es la zona del programa en la que se define.
+  Javascript define 2 ámbitos para variables: local y global.
+  Mediante 'var' podemos definir como ámbito local el ámbito de una función.
+  Con 'let', por el contrario, podemos diferenciar también el ámbito de bloque.
+  */
 
-    SINTAXIS: "use strict";
- */
-
-"use strict";
-
-let persona = "juanfran";
-let nacimiento;
-
-function informacion() {
-    persona = "Juan";
-    nacimiento = "1815";
-    console.log(persona + " nació en " + nacimiento);
+function ambito() {
+    "use strict";
+    let a = "Ámbito de función";
+    if (true) {
+        let a = "Ámbito de bloque";
+        console.log("El ambito de bloque a es: " + a);
+    }
+    console.log("El ámbito de función a es: " + a);
 }
 
-informacion();
+ambito();
 
-//El código anterior funciona perfectamente.
 
-//¿Qué pasaría si comentamos la linea 14 (let nacimiento;)?. Daría un error por no haber declarado
-//la variable. "use strict" me obliga SIEMPRE a declarar las variables antes de poder utilizarlas.
+function ambito2() {
+    "use strict";
+    var a = "Ámbito de función";
+    if (true) {
+        var a = "Ámbito de bloque";
+        console.log("El ambito de bloque a es: " + a);
+    }
+    console.log("El ámbito de función a es: " + a);
+}
 
+ambito2();//¿Qué pasaría si trabajamos con 'var' en vez de con 'let'?
