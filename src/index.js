@@ -1,32 +1,17 @@
-//ÁMBITO DE VARIABLES
+//Declaración de constantes con const
 
-/*El ámbito de una variable (scope) es la zona del programa en la que se define.
-  Javascript define 2 ámbitos para variables: local y global.
-  Mediante 'var' podemos definir como ámbito local el ámbito de una función.
-  Con 'let', por el contrario, podemos diferenciar también el ámbito de bloque.
-  */
+/*
+    Las variables constantes en Javascript tienen ámbito de bloque al igual que las variables
+    definidas con 'let'.
+    Como sabemos, el valor de una constante no puede variar.
+    Para diferenciarlo de las variables combiene nombrarlas en mayusculas
+*/
 
-function ambito() {
+function saludar() {
     "use strict";
-    let a = "Ámbito de función";
-    if (true) {
-        let a = "Ámbito de bloque";
-        console.log("El ambito de bloque a es: " + a);
-    }
-    console.log("El ámbito de función a es: " + a);
+    const SALUDO = "Hola, amigo";
+    //SALUDO = "ADIOS";
+    console.log(SALUDO);
 }
 
-ambito();
-
-
-function ambito2() {
-    "use strict";
-    var a = "Ámbito de función";
-    if (true) {
-        var a = "Ámbito de bloque";
-        console.log("El ambito de bloque a es: " + a);
-    }
-    console.log("El ámbito de función a es: " + a);
-}
-
-ambito2();//¿Qué pasaría si trabajamos con 'var' en vez de con 'let'?
+saludar();
