@@ -1,16 +1,23 @@
+//USE STRICT O MODO ESTRICTO
+
+/**
+    "use strict" es una línea que indica que el código debe ser usado "en modo estricto", es decir,
+    no se pueden utilizar variables no declaradas.
+    Fuera de una función tienen ámbito global; dentro de ella, local (el de la función).
+
+    SINTAXIS: "use strict";
+ */
 "use strict";
 
-//CREACIÓN DE VARIABLES CON LET
+var persona = "juanfran";
+var nacimiento;
 
-/* let declara una variable limitando su ámbito a (scope) al bloque,
-   declaración o expresión donde se está usando.
-   */
-//SINTAXIS: let nombreVariable [=valor];
-//Usando var, lo siguiente es posible
-var persona = "JuanFran";
-var persona = "Castilla";
-console.log(persona); //usando let, no es posible. Da error.
+function informacion() {
+  persona = "Juan";
+  nacimiento = "1815";
+  console.log(persona + " nació en " + nacimiento);
+}
 
-var nombre = "Juanfran";
-nombre = "Castilla";
-console.log(persona);
+informacion(); //El código anterior funciona perfectamente.
+//¿Qué pasaría si comentamos la linea 14 (let nacimiento;)?. Daría un error por no haber declarado
+//la variable. "use strict" me obliga SIEMPRE a declarar las variables antes de poder utilizarlas.
